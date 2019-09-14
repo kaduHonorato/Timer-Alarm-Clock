@@ -1,0 +1,130 @@
+*
+{
+margin:0;
+padding:0;
+}
+
+
+#caixaPrincipal
+{
+width:300px;
+margin:5px;
+}
+
+.blocoSuperior 
+{
+margin:3px 0;
+}
+
+
+.blocoSuperior div,#blocoSuperior span
+{
+display:inline-block; 
+position:relative;
+}
+
+.blocoPadrao
+{
+text-align:center;
+}
+
+.blocoPadrao label
+{
+display:inline-block;
+width: 130px;
+padding:5px;
+text-align:center;
+font-size:12.5px;
+}
+
+
+#tagPararAlarme
+{
+padding:5px 10px;
+font-family:"arial"; 
+color:#fff;
+text-shadow: 1px 1px #000;
+background:rgba(2,2,2,.5);
+}
+
+.blocoSuperior span
+{
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+fieldset
+{
+display:inline-block;
+margin:5px 0;
+padding:5px;
+}
+
+fieldset legend
+{
+font-style: italic;
+font-size: 12px;
+color:#8d8d8d;
+font-family:"Impact";
+
+}
+
+
+.styleImputTmp
+{
+width:40px;
+height:20px; 
+}
+
+#CaixaCronometro div
+{
+margin:5px auto;
+color:#7e7e7e;
+font-weight:bold;
+font-family:"Garuda";
+font-size:20px;
+}
+
+
+.btCrono
+{
+width:100px;
+text-align:center;
+}
+
+.eleDesativado
+{
+opacity:.3;
+}
+
+.eleAtivado
+{
+cursor:pointer;
+}
+
+.ghost
+{
+display:none;    
+} 
+
+.fundoCinza
+{
+background:#a7a4a4de;
+}
+
+.fundoCinza2
+{
+background:#a9a9a9;
+}
+
+
+.eleSelecionado
+{
+cursor:default;
+opacity:1;
+}
+
+.eleNaoSelecionado
+{
+cursor:pointer;
+opacity:.5;
+}

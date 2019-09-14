@@ -1,0 +1,59 @@
+<!Doctype html>
+<html lang = "pt-br">
+<head>
+    <title>Cronômetro</title>
+    <meta charset="UTF-8"/>
+    <link rel = "stylesheet" type = "text/css" href = "_css/estilo.css"/>
+</head>
+<body>
+
+<div id = "caixaPrincipal">
+    <div class = "blocoSuperior fundoCinza">
+        <div id = "tagPararAlarme" class = "eleDesativado">X</div>
+        <span id = "tagTxtPararAlarme">Parar Alarme</span>
+    </div>
+
+    <div class = "blocoPadrao">
+        <label class = "fundoCinza2"><input type = "radio" name = "opcTmp" value = "1"  /><span id = "tagTxtAlarme">Alarme</span></label>
+        <label class = "fundoCinza2"><input type = "radio" name = "opcTmp" value = "0"  /><span id = "tagTxtTimer">Timer</span></label>    
+    </div>
+  
+
+<div id = "dvTagsTempo" class = "blocoPadrao">
+<fieldset>
+    <legend>Horas</legend>    
+    <input id = "tagTmpHor" class = "styleImputTmp" type = "number" min = "0" value = "0" />
+</fieldset>
+
+<fieldset>
+    <legend>Minutos</legend>    
+    <input id = "tagTmpMin" class = "styleImputTmp" type = "number" min = "0" value = "0" max = "59" />
+</fieldset>
+
+<fieldset>
+    <legend>Segundos</legend>   
+    <input id = "tagTmpSeg" class = "styleImputTmp" type = "number" min = "0" value = "0" min = 0 max = "59" />
+</fieldset>
+</div>
+
+
+<div id = "CaixaCronometro">
+<div class = "blocoPadrao">   
+    <span id = "tagTmpAtual">00:00:00</span>  
+</div>
+
+<div class = "blocoPadrao" >
+<button class = "btCrono" id = "tagBtIniciaCrono">Iniciar</button>
+<button class = "btCrono ghost" id = "tagBtParaCrono">Parar</button>
+<button class = "btCrono" id = "tagBtCancelaCrono">Cancelar</button>
+</div>
+
+</div>
+
+<audio id = "tagAlarme" src = "_media/alarme.mp3" loop = "true"></audio>
+
+</div>
+
+<script src = "_javascript/script.js"></script>    
+</body>
+</html>
