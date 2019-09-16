@@ -77,12 +77,10 @@ selecionaOpcCrono();
 tagsOpcTmp[0].addEventListener("input",selecionaOpcCrono);
 tagsOpcTmp[1].addEventListener("input",selecionaOpcCrono);
 
+tagTmpHor.addEventListener("input",checaTagsTempo);
+tagTmpMin.addEventListener("input",checaTagsTempo);
+tagTmpSeg.addEventListener("input",checaTagsTempo);
 
-
-
-tagTmpHor.addEventListener("input",addTmpCrono);
-tagTmpMin.addEventListener("input",addTmpCrono);
-tagTmpSeg.addEventListener("input",addTmpCrono);
 
 
 function zeraTagsTempo(tag){
@@ -136,40 +134,63 @@ tag.parentElement.classList.remove("eleSelecionado");
 
 function selecionaOpcCrono(){
 
-
-
-if(this.value == undefined)
-    alarmModeSel = 1;
-else
-    alarmModeSel = parseInt(this.value);
+    if(this.value == undefined)
+        alarmModeSel = 1;
+    else
+        alarmModeSel = parseInt(this.value);
     
+        
+    if(alarmModeSel){
+    
+    tagTmpHor.max = 23;
+            
+    }else{
+            
+    tagTmpHor.max = 100;
+            
+    }
+    
+    
+    checaEstadoTagsRadio();
+    checaTagsTempo();
+    
+    }
 
-checaEstadoTagsRadio();
-addTmpCrono();
 
-}
+    function checaTagsTempo(){
 
-
+        var tagsTempo = [tagTmpHor,tagTmpMin,tagTmpSeg];
+        
+        
+        for(var x = 0; x < tagsTempo.length; x++){
+        
+        if(!(isNaN(parseInt(tagsTempo[x].value))) && (parseInt(tagsTempo[x].value) > tagsTempo[x].max))
+            tagsTempo[x].value = tagsTempo[x].max;
+            
+                
+            
+            
+        if(isNaN(parseInt(tagsTempo[x].value)) || parseInt(tagsTempo[x].value) < 0)
+           zeraTagsTempo(tagsTempo[x]);
+        
+        }
+        
+        
+        addTmpCrono();
+        
+        }
 
 
 function addTmpCrono(){
-    
-if(isNaN(parseInt(this.value)) || parseInt(this.value) < 0){
-
-zeraTagsTempo(this);
-
-}else{
 
 tmpCrono =  parseInt((tagTmpHor.value * 3600)) + parseInt((tagTmpMin.value * 60)) + parseInt((tagTmpSeg.value));
-
+            
 switchEstadoBts(
-    tagBtIniciaCrono,(!((tmpCrono > 0) || (alarmModeSel)))
-   );
+                tagBtIniciaCrono,(!((tmpCrono > 0) || (alarmModeSel)))
+              );
+            
 
 }
-
-}
-
 
 
 tagBtIniciaCrono.addEventListener("click",function(){
